@@ -1,0 +1,22 @@
+.contactsheet {
+    background-color: #ff3c00;
+    min-height: 150vh;
+    opacity: 60%;
+    border-radius: 70px;
+}
+
+.heading {
+    padding: 30px;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
