@@ -5,3 +5,7 @@
     padding-left: 50px;
 }
 
+.container-nav {
+    max-height: fit-content;
+}
+

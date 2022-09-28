@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import './Login.css';
 import styles from './styles.jsx';
 
@@ -8,11 +7,12 @@ class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-            username:'',
-            password:'',
-            error: 'Error',
-            logged:true,
-            desc:'Write something about yourself!',
+            username:"",
+            password:"",
+            error: "",
+            description: "",
+            logged: true
+            
         }
     }
 
@@ -21,31 +21,36 @@ class Login extends React.Component {
         this.setState({
          [name]:value
         });
-       }
+       };
 
        handleSubmit = (e) => {
         e.preventDefault();
         e.stopPropagation();
        
         let error = null;
-        const username_trim = this.state.trim();
-        const password_trim = this.state.trim();
+
+        const username_trim = this.state.username.trim();
+        const password_trim = this.state.password.trim();
+        const description_trim = this.state.description.trim();
         if (username_trim.length == 0) {
             error = "Enter a username";
         } else if (password_trim.length == 0) {
             error = "Enter a password";
-        }
+        } else if (description_trim.length == 0) {
+            error = "Enter a description";
+        }   
+
         this.setState({
-            error:error
+         error: error
         });
+        
         if (error) {
             return;
+
         }
+    }
 
-       }
-
-
-       render() {    
+       render() {      
        return (
        <div className='contactsheet'>
        <div>
@@ -53,8 +58,8 @@ class Login extends React.Component {
                <h1>Signup for my News Letter every Week!</h1></p>
        </div>
        <form styles={styles.wrapper} onSubmit={this.handleSubmit}>
-          <div className='inputs'> 
-           <div>
+          <div className='inputs'>
+           <div> 
             <input
              type='text'
              placeholder='Username'
@@ -62,26 +67,28 @@ class Login extends React.Component {
              value={this.state.username}
              style={styles.input}
              onChange={this.handleInput} />
-           </div>
-           <div>
+            </div>
+            <div> 
             <input
-             type='text'
+             type='password'
              placeholder='Password'
              name='password'
              value={this.state.password}
              style={styles.input}
-             onChange={this.handleInput} />
-           </div>
-           </div>
+             onChange={this.handleInput}
+             autoComplete='current-password'
+             />
+             </div>
+          </div>
            <div>
             <textarea
              type='text'
-             placeholder=''
-             name='desc'
+             placeholder='Description'
+             name='description'
              value={this.state.desc}
              onChange={this.handleInput} />
            </div>
-           <input type='submit' value='Log In' />
+           <input type='submit' value='Log In' style={styles.submit} />
            <p style={styles.error}>{this.state.error}</p>
        </form>
     </div>

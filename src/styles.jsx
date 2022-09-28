@@ -7,6 +7,12 @@ const styles = {
         padding:25,
         borderRadius:24,
     },
+    row: {
+        width: "100%",
+        marginBottom: 16,
+        display: "flex",
+        flexDirection: "column"
+    },
     input:{
         width:'100%',
         padding:8,
@@ -22,7 +28,7 @@ const styles = {
         boxSizing:'border-box',
        }, 
         error:{
-        color:'red',
+        color:'black',
         fontStyle:'italic',
         marginTop:8,
         marginBottom:0,

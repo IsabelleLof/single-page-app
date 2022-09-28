@@ -4,7 +4,7 @@ import './About.css';
 
 function About() {
   return (
-    <div>
+    <div className='container-about'>
       <div>
       <a href="illustration">
         <img className="illustration" src={illustration} alt="big"/></a>

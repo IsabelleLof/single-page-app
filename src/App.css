@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   font-family: monospace;
 }
 
@@ -20,4 +19,5 @@ nav {
   align-items: center;
   list-style: none;
   color: white;
+  gap: 25px;
 }
